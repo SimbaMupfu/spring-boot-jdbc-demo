@@ -19,7 +19,7 @@ public class SpringJdbcDemoApplication {
 		employee1.setDepartment("Frontend");
 
 		EmployeeService employeeService = context.getBean(EmployeeService.class);
-		employeeService.addEmployee(employee1);
+//		employeeService.addEmployee(employee1);
 		System.out.println(employeeService.getEmployees());
 	}
 
