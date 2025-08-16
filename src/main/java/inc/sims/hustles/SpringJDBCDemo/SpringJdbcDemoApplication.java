@@ -14,9 +14,9 @@ public class SpringJdbcDemoApplication {
 		ApplicationContext context = SpringApplication.run(SpringJdbcDemoApplication.class, args);
 
 		Employee employee1 = context.getBean(Employee.class);
-		employee1.setEmpID(101);
-		employee1.setEmpName("Simbarashe");
-		employee1.setDepartment("Mobile");
+		employee1.setEmpID(104);
+		employee1.setEmpName("Mupfururirwa");
+		employee1.setDepartment("Frontend");
 
 		EmployeeService employeeService = context.getBean(EmployeeService.class);
 		employeeService.addEmployee(employee1);
