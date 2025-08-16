@@ -34,17 +34,12 @@ public class EmployeeRepository {
     public List<Employee> findAll(){
         String sql = "SELECT * FROM employee";
 
-        RowMapper<Employee> mapper = new RowMapper<Employee>() {
-            @Override
-            public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Employee employee = new Employee();
-                employee.setEmpID(rs.getInt("empid"));
-                employee.setEmpName(rs.getString("empname"));
-                employee.setDepartment(rs.getString("department"));
-                return employee;
-            }
-        };
-
-        return jdbc.query(sql, mapper);
+        return jdbc.query(sql, (rs, rowNum) -> {
+            Employee employee = new Employee();
+            employee.setEmpID(rs.getInt("empid"));
+            employee.setEmpName(rs.getString("empname"));
+            employee.setDepartment(rs.getString("department"));
+            return employee;
+        });
     }
 }
