@@ -20,6 +20,7 @@ public class SpringJdbcDemoApplication {
 
 		EmployeeService employeeService = context.getBean(EmployeeService.class);
 		employeeService.addEmployee(employee1);
+		employeeService.getEmployees();
 	}
 
 }
