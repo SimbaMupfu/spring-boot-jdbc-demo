@@ -14,12 +14,12 @@ public class SpringJdbcDemoApplication {
 		ApplicationContext context = SpringApplication.run(SpringJdbcDemoApplication.class, args);
 
 		Employee employee1 = context.getBean(Employee.class);
-		employee1.setEmpID(104);
+		employee1.setEmpID(204);
 		employee1.setEmpName("Mupfururirwa");
 		employee1.setDepartment("Frontend");
 
 		EmployeeService employeeService = context.getBean(EmployeeService.class);
-//		employeeService.addEmployee(employee1);
+		employeeService.addEmployee(employee1);
 		System.out.println(employeeService.getEmployees());
 	}
 
